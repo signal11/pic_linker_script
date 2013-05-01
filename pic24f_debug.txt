@@ -1,0 +1,15 @@
+
+#define DEBUG_INFO(X) X 0 : { *(X) }
+
+	DEBUG_INFO(.comment)
+	.debug_info 0: { *(.debug_info) *(.gnu.linkonce.wi.*) }
+	DEBUG_INFO(.debug_abbrev)
+	DEBUG_INFO(.debug_line)
+	DEBUG_INFO(.debug_frame)
+	DEBUG_INFO(.debug_str)
+	DEBUG_INFO(.debug_loc)
+	DEBUG_INFO(.debug_macinfo)
+	DEBUG_INFO(.debug_pubnames)
+	DEBUG_INFO(.debug_ranges)
+	DEBUG_INFO(.debug_aranges)
+

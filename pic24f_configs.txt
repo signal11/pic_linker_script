@@ -1,0 +1,7 @@
+
+#define CONFIG(X) __##X : { KEEP (*(__##X.sec*)) } > X
+
+	CONFIG(CONFIG1)
+	CONFIG(CONFIG2)
+	CONFIG(CONFIG3)
+	CONFIG(CONFIG4)
