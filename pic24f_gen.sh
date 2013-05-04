@@ -40,6 +40,10 @@ cat pic24f_reset.txt  >> $OUTPUT
 
 echo "" >> $OUTPUT
 
+cat pic24f_icd.txt >> $OUTPUT
+
+echo "" >> $OUTPUT
+
 cat pic24f_debug.txt >> $OUTPUT
 
 echo "" >> $OUTPUT

@@ -1,0 +1,6 @@
+	/* Reserve 0x50 bytes of RAM for the debugger if __ICD2RAM is
+	 * defined.  It turns out this RAM block is used for all Microchip
+	 * debuggers, not just the ICD2.  */
+	.icd DATA_BASE : {
+		. += (DEFINED(__ICD2RAM) ? 0x50 : 0);
+	} >data
