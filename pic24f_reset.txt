@@ -1,4 +1,4 @@
 	.reset RESET_BASE : {
-		LONG(0x040000 | ABSOLUTE(__reset));
+		LONG(0x040000 | ABSOLUTE(__reset) & 0xffff);
 		LONG((ABSOLUTE(__reset) >> 16) & 0x7f);
 	} >reset
