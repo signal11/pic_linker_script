@@ -1,128 +1,128 @@
-ReservedTrap0
-OscillatorFail
-AddressError
-StackError
-MathError
-ReservedTrap5
-ReservedTrap6
-ReservedTrap7
-INT0Interrupt
-IC1Interrupt
-OC1Interrupt
-T1Interrupt
-Interrupt4
-IC2Interrupt
-OC2Interrupt
-T2Interrupt
-T3Interrupt
-SPI1ErrInterrupt
-SPI1Interrupt
-U1RXInterrupt
-U1TXInterrupt
-ADC1Interrupt
-Interrupt14
-Interrupt15
-SI2C1Interrupt
-MI2C1Interrupt
-CompInterrupt
-CNInterrupt
-INT1Interrupt
-Interrupt21
-Interrupt22
-Interrupt23
-Interrupt24
-OC3Interrupt
-OC4Interrupt
-T4Interrupt
-T5Interrupt
-INT2Interrupt
-U2RXInterrupt
-U2TXInterrupt
-SPI2ErrInterrupt
-SPI2Interrupt
-Interrupt34
+ReservedTrap0	N
+OscillatorFail	Y
+AddressError	Y
+StackError	Y
+MathError	Y
+ReservedTrap5	N
+ReservedTrap6	N
+ReservedTrap7	N
+INT0Interrupt	Y
+IC1Interrupt	Y
+OC1Interrupt	Y
+T1Interrupt	Y
+Interrupt4	N
+IC2Interrupt	Y
+OC2Interrupt	Y
+T2Interrupt	Y
+T3Interrupt	Y
+SPI1ErrInterrupt	Y
+SPI1Interrupt	Y
+U1RXInterrupt	Y
+U1TXInterrupt	Y
+ADC1Interrupt	Y
+Interrupt14	N
+Interrupt15	N
+SI2C1Interrupt	Y
+MI2C1Interrupt	Y
+CompInterrupt	Y
+CNInterrupt	Y
+INT1Interrupt	Y
+Interrupt21	N
+Interrupt22	N
+Interrupt23	N
+Interrupt24	N
+OC3Interrupt	Y
+OC4Interrupt	Y
+T4Interrupt	Y
+T5Interrupt	Y
+INT2Interrupt	Y
+U2RXInterrupt	Y
+U2TXInterrupt	Y
+SPI2ErrInterrupt	Y
+SPI2Interrupt	Y
+Interrupt34	N
 
-Interrupt35
-Interrupt36
-IC3Interrupt
-IC4Interrupt
-IC5Interrupt
-Interrupt40
-OC5Interrupt
-Interrupt42
-Interrupt43
-Interrupt44
-PMPInterrupt
-Interrupt46
-Interrupt47
-Interrupt48
-SI2C2Interrupt
-MI2C2Interrupt
-Interrupt51
-Interrupt52
-INT3Interrupt
-INT4Interrupt
-Interrupt55
-Interrupt56
-Interrupt57
-Interrupt58
-Interrupt59
-Interrupt60
-Interrupt61
-RTCCInterrupt
-Interrupt63
-Interrupt64
-U1ErrInterrupt
-U2ErrInterrupt
-CRCInterrupt
-Interrupt68
-Interrupt69
-Interrupt70
-Interrupt71
-Interrupt72
-Interrupt73
-Interrupt74
-Interrupt75
-Interrupt76
-Interrupt77
-Interrupt78
-Interrupt79
+Interrupt35	N
+Interrupt36	N
+IC3Interrupt	Y
+IC4Interrupt	Y
+IC5Interrupt	Y
+Interrupt40	N
+OC5Interrupt	Y
+Interrupt42	N
+Interrupt43	N
+Interrupt44	N
+PMPInterrupt	Y
+Interrupt46	N
+Interrupt47	N
+Interrupt48	N
+SI2C2Interrupt	Y
+MI2C2Interrupt	Y
+Interrupt51	N
+Interrupt52	N
+INT3Interrupt	Y
+INT4Interrupt	Y
+Interrupt55	N
+Interrupt56	N
+Interrupt57	N
+Interrupt58	N
+Interrupt59	N
+Interrupt60	N
+Interrupt61	N
+RTCCInterrupt	Y
+Interrupt63	N
+Interrupt64	N
+U1ErrInterrupt	Y
+U2ErrInterrupt	Y
+CRCInterrupt	Y
+Interrupt68	N
+Interrupt69	N
+Interrupt70	N
+Interrupt71	N
+Interrupt72	N
+Interrupt73	N
+Interrupt74	N
+Interrupt75	N
+Interrupt76	N
+Interrupt77	N
+Interrupt78	N
+Interrupt79	N
 
-Interrupt80
-Interrupt81
-Interrupt82
-Interrupt83
-Interrupt84
-Interrupt85
-USB1Interrupt
-Interrupt87
-Interrupt88
-Interrupt89
-Interrupt90
-Interrupt91
-Interrupt92
-Interrupt93
-Interrupt94
-Interrupt95
-Interrupt96
-Interrupt97
-Interrupt98
-Interrupt99
-Interrupt100
-Interrupt101
-Interrupt102
-Interrupt103
-Interrupt104
-Interrupt105
-Interrupt106
-Interrupt107
-Interrupt108
-Interrupt109
-Interrupt110
-Interrupt111
-Interrupt112
-Interrupt113
-Interrupt114
-Interrupt115
-Interrupt116
-Interrupt117
+Interrupt80	N
+Interrupt81	N
+Interrupt82	N
+Interrupt83	N
+Interrupt84	N
+Interrupt85	N
+USB1Interrupt	Y
+Interrupt87	N
+Interrupt88     N
+Interrupt89	N
+Interrupt90	N
+Interrupt91	N
+Interrupt92	N
+Interrupt93	N
+Interrupt94	N
+Interrupt95	N
+Interrupt96	N
+Interrupt97	N
+Interrupt98	N
+Interrupt99	N
+Interrupt100	N
+Interrupt101	N
+Interrupt102	N
+Interrupt103	N
+Interrupt104	N
+Interrupt105	N
+Interrupt106	N
+Interrupt107	N
+Interrupt108	N
+Interrupt109	N
+Interrupt110	N
+Interrupt111	N
+Interrupt112	N
+Interrupt113	N
+Interrupt114	N
+Interrupt115	N
+Interrupt116	N
+Interrupt117	N

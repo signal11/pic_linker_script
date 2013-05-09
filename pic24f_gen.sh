@@ -54,7 +54,7 @@ echo "" >> $OUTPUT
 
 echo -e "\t.intvec IVT_BASE : {" >> $OUTPUT
 
-cat pic24f_interrupts.txt | while read INTERRUPT
+cat pic24f_interrupts.txt | while read INTERRUPT IMPLEMENTED
 do
 	if [ $INTERRUPT ]; then
 		echo -e  "\t\tHANDLER($INTERRUPT)" >> $OUTPUT
@@ -69,7 +69,7 @@ echo "" >> $OUTPUT
 
 echo -e "\t.altintvec ALT_IVT_BASE : {" >> $OUTPUT
 
-cat pic24f_interrupts.txt | while read INTERRUPT
+cat pic24f_interrupts.txt | while read INTERRUPT IMPLEMENTED
 do
 	if [ $INTERRUPT ]; then
 		echo -e  "\t\tALTHANDLER($INTERRUPT)" >> $OUTPUT
