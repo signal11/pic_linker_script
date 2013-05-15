@@ -64,13 +64,13 @@ Generating
 -----------
 Run ./gen_linker_scripts.sh . All the generated files will go in output/ .
 
-Adding Suport for New Microcontrollers
+Adding Support for New Microcontrollers
 ---------------------------------------
 To add an MCU in an already supported family (currently PIC24F), all you
 should need to generate is a *_mem.txt and a *_regs.txt for your micro.  For
 the _mem.txt file, start with one that exists already and modify it. For the
-*_regs.txt file, you'll need to make one using the datahseet for your MCU. 
-Use the exact names and addresses of the registers in the datahseet in the
+*_regs.txt file, you'll need to make one using the datasheet for your MCU.
+Use the exact names and addresses of the registers in the datasheet in the
 *_regs.txt file.  Use the full name of the MCU as the prefix to the
 filenames.  Add another line to gen_linker_scripts.sh with your
 microcontroller in it.  Use pic24fj64gb002_*.txt as a template if you want. 
