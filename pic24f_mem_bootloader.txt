@@ -1,0 +1,75 @@
+
+CRT0_STARTUP(crt0_standard.o)
+CRT1_STARTUP(crt1_standard.o)
+
+#ifdef BOOTLOADER
+	#define BOOTLOADER_PROGRAM program
+	#define APP_PROGRAM app_program
+#elif defined(BOOTLOADER_APP)
+	#define BOOTLOADER_PROGRAM bootloader_program
+	#define APP_PROGRAM program
+#else
+	#error "Must define BOOTLOADER or BOOTLOADER_APP to use this linker script"
+#endif
+
+#define IVT_MAP_BASE ((CHIP_PROGRAM_START) + (BOOTLOADER_SIZE))
+#define APP_BASE ((IVT_MAP_BASE) + (IVT_MAP_SIZE))
+#define APP_LENGTH ((CHIP_FLASH_TOP_ADDR) - (APP_BASE))
+#define DATA_LENGTH ((DATA_TOP) - (DATA_BASE))
+
+#if IVT_MAP_BASE % FLASH_BLOCK_SIZE != 0
+	#error IVT_MAP_BASE is not aligned to a flash block. This may mean that BOOTLOADER_SIZE needs to be adjusted.
+#endif
+
+#if CONFIG1_ADDR < CONFIG_WORDS_BASE || CONFIG1_ADDR >= CONFIG_WORDS_TOP
+	#error "CONFIG1 out of range"
+#endif
+#if CONFIG2_ADDR < CONFIG_WORDS_BASE || CONFIG2_ADDR >= CONFIG_WORDS_TOP
+	#error "CONFIG2 out of range"
+#endif
+#if CONFIG3_ADDR < CONFIG_WORDS_BASE || CONFIG3_ADDR >= CONFIG_WORDS_TOP
+	#error "CONFIG3 out of range"
+#endif
+#if CONFIG4_ADDR < CONFIG_WORDS_BASE || CONFIG4_ADDR >= CONFIG_WORDS_TOP
+	#error "CONFIG4 out of range"
+#endif
+
+MEMORY {
+	/* Program Memory Space (Flash) */
+#if defined(BOOTLOADER)
+	reset : ORIGIN = RESET_BASE, LENGTH = 4
+	ivt : ORIGIN = IVT_BASE, LENGTH = 0xfc
+	aivt : ORIGIN = ALT_IVT_BASE, LENGTH = 0xfc
+#endif
+	BOOTLOADER_PROGRAM : ORIGIN = CHIP_PROGRAM_START, LENGTH = BOOTLOADER_SIZE
+	ivt_map : ORIGIN = IVT_MAP_BASE, LENGTH = IVT_MAP_SIZE
+	APP_PROGRAM : ORIGIN = APP_BASE, LENGTH = APP_LENGTH
+
+	CONFIG1 : ORIGIN = CONFIG1_ADDR, LENGTH = 0x2
+	CONFIG2 : ORIGIN = CONFIG2_ADDR, LENGTH = 0x2
+	CONFIG3 : ORIGIN = CONFIG3_ADDR, LENGTH = 0x2
+	CONFIG4 : ORIGIN = CONFIG4_ADDR, LENGTH = 0x2
+
+	/* Data Space (RAM) */
+	data : ORIGIN = DATA_BASE, LENGTH = DATA_LENGTH
+};
+
+__DATA_BASE = DATA_BASE;
+
+__CONFIG1 = CONFIG1_ADDR;
+__CONFIG2 = CONFIG2_ADDR;
+__CONFIG3 = CONFIG3_ADDR;
+__CONFIG4 = CONFIG4_ADDR;
+
+/* Values regarding the layout of the flash to pass to the bootloader. 
+ * They're under an ifdef only because I can't come up with a use case for
+ * an application to use them.  */
+#ifdef BOOTLOADER
+	__IVT_MAP_BASE = IVT_MAP_BASE;
+	__APP_BASE = APP_BASE;
+	__APP_LENGTH = APP_LENGTH;
+	__FLASH_BLOCK_SIZE = FLASH_BLOCK_SIZE;
+	__FLASH_TOP = CHIP_FLASH_TOP_ADDR;
+	__CONFIG_WORDS_BASE = CONFIG_WORDS_BASE;
+	__CONFIG_WORDS_TOP = CONFIG_WORDS_TOP;
+#endif

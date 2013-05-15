@@ -24,6 +24,11 @@ ENDHEADER
 
 
 cat ${DEVICE}_mem_bootloader.txt >> $OUTPUT
+echo "" >> $OUTPUT
+
+cat pic24f_mem_bootloader.txt >> $OUTPUT
+echo "" >> $OUTPUT
+
 
 echo "" >> $OUTPUT
 echo "#ifdef BOOTLOADER" >> $OUTPUT
