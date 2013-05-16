@@ -24,6 +24,10 @@ ENDHEADER
 
 
 cat ${DEVICE}_mem.txt >> $OUTPUT
+echo "" >> $OUTPUT
+
+cat pic24f_mem.txt >> $OUTPUT
+echo "" >> $OUTPUT
 
 echo "" >> $OUTPUT
 echo "#define HANDLER(X) LONG(DEFINED(__##X)? ABSOLUTE(__##X): ABSOLUTE(__DefaultInterrupt));" >> $OUTPUT

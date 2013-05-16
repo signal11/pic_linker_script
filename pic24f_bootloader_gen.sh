@@ -23,7 +23,7 @@ cat >$OUTPUT << ENDHEADER
 ENDHEADER
 
 
-cat ${DEVICE}_mem_bootloader.txt >> $OUTPUT
+cat ${DEVICE}_mem.txt >> $OUTPUT
 echo "" >> $OUTPUT
 
 cat pic24f_mem_bootloader.txt >> $OUTPUT

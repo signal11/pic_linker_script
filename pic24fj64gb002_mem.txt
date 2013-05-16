@@ -1,37 +1,31 @@
 
 OUTPUT_ARCH("24FJ64GB002")
+
 CRT0_STARTUP(crt0_standard.o)
 CRT1_STARTUP(crt1_standard.o)
+
+/* MCU Properties and Map */
+#define CHIP_PROGRAM_START 0x200
+#define CHIP_FLASH_TOP_ADDR 0xac00
+#define IVT_MAP_SIZE 0x100
+
+#define FLASH_BLOCK_SIZE 0x400
 
 #define IVT_BASE 0x4
 #define ALT_IVT_BASE 0x104
 #define RESET_BASE 0x0
-#define DATA_BASE 0x800
 #define CONFIG1_ADDR 0xabfe
 #define CONFIG2_ADDR 0xabfc
 #define CONFIG3_ADDR 0xabfa
 #define CONFIG4_ADDR 0xabf8
 
-MEMORY {
-	/* Program Memory Space (Flash) */
-	reset : ORIGIN = RESET_BASE, LENGTH = 4
-	ivt : ORIGIN = IVT_BASE, LENGTH = 0xfc
-	res1 : ORIGIN = 0x100, LENGTH = 4
-	aivt : ORIGIN = ALT_IVT_BASE, LENGTH = 0xfc
-	program : ORIGIN = 0x200, LENGTH = 0xa9f8
-	CONFIG1 : ORIGIN = CONFIG1_ADDR, LENGTH = 0x2
-	CONFIG2 : ORIGIN = CONFIG2_ADDR, LENGTH = 0x2
-	CONFIG3 : ORIGIN = CONFIG3_ADDR, LENGTH = 0x2
-	CONFIG4 : ORIGIN = CONFIG4_ADDR, LENGTH = 0x2
+#define CONFIG_WORDS_BASE 0xabf8
+#define CONFIG_WORDS_TOP  0xac00
 
-	/* Data Space (RAM) */
-	data : ORIGIN = DATA_BASE, LENGTH = 0x2000
-};
+/* Data (RAM) memory */
+#define DATA_BASE 0x800
+#define DATA_TOP 0x2800
+
+#define BOOTLOADER_SIZE 0x1200
 
 __NO_HANDLES = 1;
-__DATA_BASE = DATA_BASE;
-
-__CONFIG1 = CONFIG1_ADDR;
-__CONFIG2 = CONFIG2_ADDR;
-__CONFIG3 = CONFIG3_ADDR;
-__CONFIG4 = CONFIG4_ADDR;
