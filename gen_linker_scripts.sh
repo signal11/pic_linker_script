@@ -2,7 +2,11 @@
 
 mkdir -p output/
 
-MCUS=pic24fj64gb002
+MCUS="
+pic24fj64gb002
+pic24fj256da206
+pic24fj256da210
+"
 
 for i in $MCUS; do
 	echo "Generating $i"

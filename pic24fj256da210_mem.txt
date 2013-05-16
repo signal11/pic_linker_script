@@ -1,0 +1,30 @@
+
+OUTPUT_ARCH("24FJ256DA210")
+
+CRT0_STARTUP(crt0_extended.o)
+CRT1_STARTUP(crt1_extended.o)
+
+/* MCU Properties and Map */
+#define CHIP_PROGRAM_START 0x200
+#define CHIP_FLASH_TOP_ADDR 0x2ac00
+#define IVT_MAP_SIZE 0x100
+
+#define FLASH_BLOCK_SIZE 0x400
+
+#define IVT_BASE 0x4
+#define ALT_IVT_BASE 0x104
+#define RESET_BASE 0x0
+#define CONFIG1_ADDR 0x2abfe
+#define CONFIG2_ADDR 0x2abfc
+#define CONFIG3_ADDR 0x2abfa
+#define CONFIG4_ADDR 0x2abf8
+
+#define CONFIG_WORDS_BASE 0x2abf8
+#define CONFIG_WORDS_TOP  0x2ac00
+
+/* Data (RAM) memory */
+#define DATA_BASE 0x800
+#define DATA_TOP 0x18800
+
+#define BOOTLOADER_SIZE 0x1200
+
