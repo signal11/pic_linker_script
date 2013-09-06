@@ -1,0 +1,31 @@
+
+OUTPUT_ARCH("24FJ32GB002")
+
+CRT0_STARTUP(crt0_standard.o)
+CRT1_STARTUP(crt1_standard.o)
+
+/* MCU Properties and Map */
+#define CHIP_PROGRAM_START 0x200
+#define CHIP_FLASH_TOP_ADDR 0x5800
+#define IVT_MAP_SIZE 0x100
+
+#define FLASH_BLOCK_SIZE 0x400
+
+#define IVT_BASE 0x4
+#define ALT_IVT_BASE 0x104
+#define RESET_BASE 0x0
+#define CONFIG1_ADDR 0x57fe
+#define CONFIG2_ADDR 0x57fc
+#define CONFIG3_ADDR 0x57fa
+#define CONFIG4_ADDR 0x57f8
+
+#define CONFIG_WORDS_BASE 0x57f8
+#define CONFIG_WORDS_TOP  0x5800
+
+/* Data (RAM) memory */
+#define DATA_BASE 0x800
+#define DATA_TOP 0x2800
+
+#define BOOTLOADER_SIZE 0x1200
+
+__NO_HANDLES = 1;
